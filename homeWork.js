@@ -210,6 +210,24 @@ console.log('\n', whatDayIsIt(1));
    Write a function called howManyDays which receives a date as a parameter and returns the number of days passed since that date.
 */
 
+function howManyDays(start, end) {
+  let date1 = new Date(start)
+  let date2 = new Date(end)
+
+  // One day in milliseconds
+  let oneDay = 1000 * 60 * 60 * 24
+
+  // Calculating the time difference between two dates
+  let diffInTime = date2.getTime() - date1.getTime()
+
+  // Calculating the no. of days between two dates
+  let diffInDays = Math.round(diffInTime / oneDay)
+
+  return diffInDays
+}
+                            //Mo D.Year
+console.log('\n', howManyDays("1/1/2022", "1/30/2022"))
+
 /* EXERCISE 10
    Write a function called isTodayMyBirthday which should return true if today's your birthday, false otherwise.
 */
