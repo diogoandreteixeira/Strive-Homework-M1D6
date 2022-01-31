@@ -16,6 +16,7 @@ ASSIGNMENT RULES
 */
 
 let test = 'Philosophy'
+
 console.log(test)
 
 /* EXERCISE B
