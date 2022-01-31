@@ -153,6 +153,18 @@ deleteOne('difficult', true)
    Write a function called isThisAnEmail which receives a string as a parameter and returns true if the string is a valid email address.
 */
 
+const isThisAnEmail = function(string){
+  let pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
+   if(string == string.match(pattern)) {
+    console.log('\n', true)
+  } else {
+    console.log('\n', false)
+  }
+}
+
+isThisAnEmail('diogo@diogo.pt')
+
+
 /* EXERCISE 7
    Write a function called whatDayIsIt that should return the current day of the week.
 */
