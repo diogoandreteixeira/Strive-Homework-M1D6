@@ -252,6 +252,19 @@ isTodayMyBirthday()
    and returns the given object after deleting its property named as the given string.
 */
 
+function deleteProp (obj, str1) {
+    this.obj = obj
+    this.str1 = str1
+    this.getDetails = function () {
+      return this.obj + " removed by " + this.str1
+    }
+  }
+
+
+let newProp = new deleteProp("Prop", "Company");
+
+console.log(newProp.getDetails());        // => Fiction written by Peter King
+
 /* EXERCISE 12
     Write a function called oldestMovie which finds the oldest movie in the provided movies array.
 */
