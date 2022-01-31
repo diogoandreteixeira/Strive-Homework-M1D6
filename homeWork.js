@@ -30,6 +30,10 @@ console.log('\n', sum)
     Create a variable called random and assign to it a random number between 0 and 20 (it should be randomly created at each execution).
 */
 
+let random = Math.floor(Math.random() * 20) // I use math.floor() function to ensure it starts from 0
+
+console.log('\n', random)
+
 /* EXERCISE D
     Create a variable called me and assign to it an object containing the following information: name = your name, surname = your surname, age = your age.
 */
