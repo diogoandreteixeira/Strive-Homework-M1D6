@@ -17,7 +17,7 @@ ASSIGNMENT RULES
 
 let test = 'Philosophy'
 
-console.log(test)
+console.log('\n', test)
 
 /* EXERCISE B
     Create a variable called sum and assign to it the result of the sum between the numbers 10 and 20.
@@ -123,10 +123,31 @@ splitMe(text)
     If the boolean value is true it should return the string without the first letter, otherwise it should remove the last one from it.
 */
 
+/* const deleteOne = function(_string, _boolean) {
+  if (true) {
+    let str = _string.slice(0, -1)
+      console.log(_string)
+  } else {
+
+
+   }
+}
+deleteOne('difficult', true)
+ */
+
 /* EXERCISE 5
    Write a function called onlyLetters which receives a string as a parameter and returns it removing all the digits.
    Ex.: onlyLetters("I have 4 dogs") => returns "I have  dogs"
-*/
+ */
+
+   let text1 = 'This 1 week of work has been intensive'
+
+   const onlyLetters = function(str) {
+       let result = str.replace(/[0-9]/g, '') // I found this solution on stackoverflow, and as I understood, use excatly this function to remove digits from a string
+       console.log('\n', result)              // https://stackoverflow.com/questions/4993764/how-to-remove-numbers-from-a-string
+   }
+   
+   onlyLetters(text1)
 
 /* EXERCISE 6
    Write a function called isThisAnEmail which receives a string as a parameter and returns true if the string is a valid email address.
