@@ -69,6 +69,7 @@ console.log('\n', me)
 let skills = ['HTML', 'CSS', 'JAVASCRIPT']
 
 skills.push(me)
+/* me.skills */
 
 console.log('\n', skills)
 
@@ -187,11 +188,11 @@ function whatDayIsIt(x){            // Here I'm using for me a more readable cod
     return null
   } 
   else {
-    return weekDay[x]
+    return weekDay[date.getday()]
   }
 }
 
-console.log('\n', whatDayIsIt(1));
+console.log('\n', whatDayIsIt());
 
 
 
