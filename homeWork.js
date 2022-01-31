@@ -55,8 +55,16 @@ delete me.age
 console.log('\n', me)
 
 /* EXERCISE F
-   Write a piece of code for programmatically adding to the me object you defined before an array called skills, containing the programming languages you know right now.
+   Write a piece of code for programmatically adding to the me object you defined before, an array called skills, containing the programming languages you know right now.
 */
+let newMe = {} // I created a new, empty, object in order to add all information to this new one
+let skills = ['HTML', 'CSS', 'JAVASCRIPT']
+console.log('\n', skills)
+
+newMe [skills] = me // this is a possible way to add elements such as an array to an object
+
+console.log('\n', newMe)
+
 
 /* EXERCISE G
    Write a piece of code for programmatically removing the last skill from the skills array inside the me object.
