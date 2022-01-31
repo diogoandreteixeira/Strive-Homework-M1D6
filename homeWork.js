@@ -206,6 +206,19 @@ console.log('\n', whatDayIsIt(1));
     }
 */
 
+/* function dice () {
+  let randomNumber = Math.ceil(Math.random() * 6) // I'm using Math.ceil to certify that the count starts from 1
+  return randomNumber
+}
+console.log('\n', dice()) */
+
+/* const rollTheDices = function() {
+let resultOfDice = dice() * 3
+}
+console.log(rollTheDices())
+
+ */
+
 /* EXERCISE 9
    Write a function called howManyDays which receives a date as a parameter and returns the number of days passed since that date.
 */
