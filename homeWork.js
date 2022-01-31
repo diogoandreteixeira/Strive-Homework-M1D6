@@ -395,9 +395,18 @@ console.log(oldestMovie[0]);
   }
 }
 console.log(oldestMovie()) */
+
 /* EXERCISE 13
     Write a function called countMovies which returns the number of movies contained in the provided movies array.
 */
+
+const countMovies = function(array) {
+  let moviesCounted = movies.length
+  console.log('\n My Array has', moviesCounted, 'movies.')
+}
+
+countMovies()
+
 
 /* EXERCISE 14
     Write a function called onlyTheTitles which creates an array with just the titles of the movies contained in the provided movies array.
