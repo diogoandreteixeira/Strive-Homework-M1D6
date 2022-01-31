@@ -169,6 +169,32 @@ isThisAnEmail('diogo@diogo.pt')
    Write a function called whatDayIsIt that should return the current day of the week.
 */
 
+const weekDay= new Array(7)
+weekDay[0] = 'Sunday' 
+weekDay[1] = 'Monday'
+weekDay[2] = 'Tuesday'
+weekDay[3] = 'Wednesday'
+weekDay[4] = 'Thursday'
+weekDay[5] = 'Friday'
+weekDay[6] = 'Saturday'
+
+/* function whatDayIsIt(x){
+  return (x < 1) || (x > 7) ? null : weekDAY[x];  // This is the same as below, but using ternary operator
+} */
+
+function whatDayIsIt(x){            // Here I'm using for me a more readable code with the if else statement
+  if((x < 1) || (x > 7)) {
+    return null
+  } 
+  else {
+    return weekDay[x]
+  }
+}
+
+console.log('\n', whatDayIsIt(1));
+
+
+
 /* EXERCISE 8
     Write a function called rollTheDices which receives a number as a parameter.
     It should invoke the dice() function defined in Ex1 the specified amount of times,
