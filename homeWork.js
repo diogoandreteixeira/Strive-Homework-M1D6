@@ -400,7 +400,7 @@ console.log(oldestMovie()) */
     Write a function called countMovies which returns the number of movies contained in the provided movies array.
 */
 
-const countMovies = function(array) {
+const countMovies = function() {
   let moviesCounted = movies.length
   console.log('\n My Array has', moviesCounted, 'movies.')
 }
@@ -411,6 +411,19 @@ countMovies()
 /* EXERCISE 14
     Write a function called onlyTheTitles which creates an array with just the titles of the movies contained in the provided movies array.
 */
+/* const onlyTheTitles = function() {
+  let titlesCounted = movies[0].Title
+  console.log('\n My Array these movies:', titlesCounted)
+}
+onlyTheTitles() */
+
+const onlyTheTitles = function() {
+  for (let i=0; i<movies.length; i++)
+  console.log('\n My Array these movies:', movies[i])
+}
+onlyTheTitles()
+
+// Couldn't find a way to separate the titels
 
 /* EXERCISE 15
    Write a function called onlyInThisMillennium which returns only the movies produced in this millennium from the provided movies array.
