@@ -85,6 +85,12 @@ console.log('\n', skills)
     Write a function called dice; it should randomize an integer number between 1 and 6.
 */
 
+function dice () {
+    let randomNumber = Math.ceil(Math.random() * 6) // I'm using Math.ceil to certify that the count starts from 1
+    return randomNumber
+}
+console.log(dice())
+
 /* EXERCISE 2
     Write a function called whoIsBigger which receives 2 numbers as parameters and returns the biggest one.
 */
