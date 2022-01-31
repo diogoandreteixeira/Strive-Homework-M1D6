@@ -109,6 +109,14 @@ console.log('\n', whoIsBigger(33, 23))
     Write a function called splitMe which receives a string as a parameter and returns an array with every word in that string.
     Ex.: splitMe("I love coding") => returns ["I", "Love", "Coding"]
 */
+let text = 'I\'m loving to learn Javascript'
+
+const splitMe = function(string1) {
+    let result = string1.split(' ')
+    console.log('\n', result)
+}
+
+splitMe(text)
 
 /* EXERCISE 4
     Write a function called deleteOne which receives a string and a boolean as parameters.
