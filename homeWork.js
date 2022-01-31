@@ -89,11 +89,21 @@ function dice () {
     let randomNumber = Math.ceil(Math.random() * 6) // I'm using Math.ceil to certify that the count starts from 1
     return randomNumber
 }
-console.log(dice())
+console.log('\n', dice())
 
 /* EXERCISE 2
     Write a function called whoIsBigger which receives 2 numbers as parameters and returns the biggest one.
 */
+
+const whoIsBigger = function(a, b) {
+    if (a >= b) {
+        return a
+    } else {
+        return b
+    }
+}
+
+console.log('\n', whoIsBigger(33, 23))
 
 /* EXERCISE 3
     Write a function called splitMe which receives a string as a parameter and returns an array with every word in that string.
