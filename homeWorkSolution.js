@@ -215,7 +215,7 @@ console.log(date)
 
 const isTodayMyBirthday = function () {
   let today = new Date();
-  let myBirthday = new Date(1986, 8, 2);
+  let myBirthday = new Date(1986, 8, 2); // 3 sep 86
   let isTodayMyBirthday = false;
   if (
     today.getDay() === myBirthday.getDay() &&

@@ -44,6 +44,7 @@ let me = {
     age: 27
 }
 
+// me.name === me['name']
 console.log('\n', me)
 
 /* EXERCISE E
@@ -65,21 +66,31 @@ console.log('\n', me)
 //newMe [skills] = me // this is a possible way to add elements such as an array to an object
 
 //console.log('\n', newMe)
-
+/* 
 let skills = ['HTML', 'CSS', 'JAVASCRIPT']
 
 skills.push(me)
-/* me.skills */
+/* me./* skills */
 
-console.log('\n', skills)
+/* console.log('\n', skills) */ 
+
+me.skills = ['HTML', 'CSS', 'JAVASCRIPT']
+
+console.log(me)
+
+console.log(me.skills) // now I can call the array with the dot notation
 
 /* EXERCISE G
    Write a piece of code for programmatically removing the last skill from the skills array inside the me object.
 */
 
-skills.splice(2,1) // if I add a 0 after the 1, it shows on the console, so I'm opting not to put it there
+/* skills.splice(2,1) // if I add a 0 after the 1, it shows on the console, so I'm opting not to put it there
 
-console.log('\n', skills)
+console.log('\n', skills) */
+
+me.skills.pop()
+
+console.log(me) // removing last skill from array
 
 // JS Functions
 /* EXERCISE 1
@@ -88,9 +99,13 @@ console.log('\n', skills)
 
 function dice () {
     let randomNumber = Math.ceil(Math.random() * 6) // I'm using Math.ceil to certify that the count starts from 1
-    return randomNumber
+    return randomNumber 
 }
 console.log('\n', dice())
+
+/* const dice = function () {
+  return Math.floor(Math.random() * 6 + 1);
+}; */ // THIS IS ALSO A GOOD SOLUTION
 
 /* EXERCISE 2
     Write a function called whoIsBigger which receives 2 numbers as parameters and returns the biggest one.
@@ -103,6 +118,7 @@ const whoIsBigger = function(a, b) {
         return b
     }
 }
+    // return a > b ? a : b ------ Same Operation Using Ternary Operator
 
 console.log('\n', whoIsBigger(33, 23))
 
@@ -119,10 +135,25 @@ const splitMe = function(string1) {
 
 splitMe(text)
 
+// const splitMe = function (str) {
+//  return str.split(" ");
+// }; ------------------- Also a Good shorter solution that receives a str as a parameter
+
 /* EXERCISE 4
     Write a function called deleteOne which receives a string and a boolean as parameters.
     If the boolean value is true it should return the string without the first letter, otherwise it should remove the last one from it.
 */
+
+const deleteOne = function (str, first) {
+  if (first) {                                    // it assumes true by default
+    return str.substring(1);
+  } else {
+    return str.substring(0, str.length - 1);  // taking last character if false
+  }
+};
+
+console.log(deleteOne('String', true)) // takes first character
+console.log(deleteOne('String', false)) // takes last character
 
 /* const deleteOne = function(_string, _boolean) {
   if (true) {
@@ -148,13 +179,54 @@ deleteOne('difficult', true)
        console.log('\n', result)              // https://stackoverflow.com/questions/4993764/how-to-remove-numbers-from-a-string
    }
    
-   onlyLetters(text1)
+   onlyLetters('7867786fesjhbfgjyrsgb78786789rsgjuhvberwzi78')
+
+/*    const onlyLetters = function (str) {
+    let result = "";
+    for (let i = 0; i < str.length; i++) {
+      let currentLetter = str[i];
+      if (currentLetter !== "0" 
+      && currentLetter !== "1" 
+      && currentLetter !== "2" 
+      && currentLetter !== "3" 
+      && currentLetter !== "4" 
+      && currentLetter !== "5" 
+      && currentLetter !== "6"
+      && currentLetter !== "7"
+      && currentLetter !== "8"
+      && currentLetter !== "9"
+      ) {
+        result += currentLetter;
+      }
+    }
+    return result;
+    //isNan
+  
+  };
+  
+  
+  
+  let lett = onlyLetters("Hello 3 World")
+  console.log(lett); */
+/* 
+  function onlyLetters(str) {
+    let result = ''
+    for( let i = 0; i < str.length; i++){
+      let currentLetter = str[i]
+      if (isNaN(currentLetter))
+      result += currentLetter
+    }
+
+    return result
+  }
+
+  console.log(onlyLetters('3253463dfyity7u4674q67gtftgj')) */
 
 /* EXERCISE 6
    Write a function called isThisAnEmail which receives a string as a parameter and returns true if the string is a valid email address.
 */
 
-const isThisAnEmail = function(string){
+/* const isThisAnEmail = function(string){
   let pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
    if(string == string.match(pattern)) {
     console.log('\n', true)
@@ -163,14 +235,19 @@ const isThisAnEmail = function(string){
   }
 }
 
-isThisAnEmail('diogo@diogo.pt')
+isThisAnEmail('fejsuwyhfgjuys@£fglkbnildk.pt')
+ */ // I'm gonna find a better solution
 
+ const isThisAnEmail = function (email) {
+  return email.indexOf("@") > 0 && email.indexOf(".") > 0;
+  // /^S+@\S+\.\S+$/.test()
+};
 
 /* EXERCISE 7
    Write a function called whatDayIsIt that should return the current day of the week.
 */
 
-const weekDay= new Array(7)
+/* const weekDay= new Array(7)
 weekDay[0] = 'Sunday' 
 weekDay[1] = 'Monday'
 weekDay[2] = 'Tuesday'
@@ -178,11 +255,11 @@ weekDay[3] = 'Wednesday'
 weekDay[4] = 'Thursday'
 weekDay[5] = 'Friday'
 weekDay[6] = 'Saturday'
-
+ */
 /* function whatDayIsIt(x){
   return (x < 1) || (x > 7) ? null : weekDAY[x];  // This is the same as below, but using ternary operator
 } */
-
+/* 
 function whatDayIsIt(x){            // Here I'm using for me a more readable code with the if else statement
   if((x < 1) || (x > 7)) {
     return null
@@ -193,7 +270,14 @@ function whatDayIsIt(x){            // Here I'm using for me a more readable cod
 }
 
 console.log('\n', whatDayIsIt());
+ */  
 
+const whatDayIsIt = function () {
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  return days[new Date().getDay()]; // .getDay() will alwasy give a number between 0 - 6 which corresponds to the array
+};
+
+console.log(whatDayIsIt()) // Simpler and much more effective way of doing this exercice
 
 
 /* EXERCISE 8
@@ -220,6 +304,24 @@ console.log(rollTheDices())
 
  */
 
+const rollTheDices = function (numberOfDices) {
+  let result = {
+    sum: 0,
+    values: [],
+  };
+
+  for (let i = 0; i < numberOfDices; i++) {
+    let diceRoll = dice();
+    result.sum += diceRoll;
+    result.values.push(diceRoll);
+  }
+
+  return result;
+};
+
+
+console.log(rollTheDices(23))
+
 /* EXERCISE 9
    Write a function called howManyDays which receives a date as a parameter and returns the number of days passed since that date.
 */
@@ -240,13 +342,30 @@ function howManyDays(start, end) {
   return diffInDays
 }
                             //Mo D.Year
-console.log('\n', howManyDays("1/1/2022", "1/30/2022"))
+console.log('\n', howManyDays("9/23/1994", "1/02/2022"))
+/* 
+const howManyDays = function(selectedDate) {
+  let today = Date.now();
+  let selectedInMilliseconds = Date.parse(selectedDate) //ms
+  return Math.floor((today - selectedInMilliseconds) / (1000 * 60 * 60 * 24))
+};
 
+let date = howManyDays(("23 Sep 1994"))
+
+console.log(date) */
+
+/* function howManyDays (selectedDate) {
+  let today = new Date()
+  let difference = today - selectedDate
+  return difference / (1000 * 60 * 60 * 24)
+}
+
+console.log(howManyDays(30 12 2021)) */
 /* EXERCISE 10
    Write a function called isTodayMyBirthday which should return true if today's your birthday, false otherwise.
 */
 
-const isTodayMyBirthday = function(date){
+/* const isTodayMyBirthday = function(date){
   let date1 = '9/23'
   let date2 = '23/9'
     if(date1 || date2) {
@@ -256,30 +375,26 @@ const isTodayMyBirthday = function(date){
   }
 }
 
-isTodayMyBirthday()
+isTodayMyBirthday() */
+
+const isTodayMyBirthday = function () {
+  let today = new Date();
+  let myBirthday = new Date(1986, 8, 2); // 3 sep 86
+  let isTodayMyBirthday = false;
+  if (
+    today.getDay() === myBirthday.getDay() &&
+    today.getMonth() === myBirthday.getMonth()
+  ) {
+    isTodayMyBirthday = true;
+  }
+  return isTodayMyBirthday;
+};
+
+console.log(isTodayMyBirthday())
+
 
 // JS Arrays & Objects
 // NOTE: the movies array used in some exercises is defined at the end of this file
-
-/* EXERCISE 11
-   Write a function called deleteProp which receives an object and a string as parameters,
-   and returns the given object after deleting its property named as the given string.
-*/
-
-function deleteProp (obj, str1) {
-    this.obj = obj
-    this.str1 = str1
-    this.getDetails = function () {
-      return this.obj + " removed by " + this.str1
-    }
-  }
-let newProp = new deleteProp("Prop", "Company");
-
-console.log('\n', newProp.getDetails()); 
-
-/* EXERCISE 12
-    Write a function called oldestMovie which finds the oldest movie in the provided movies array.
-*/
 const movies = [
   {
     Title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -394,13 +509,45 @@ const movies = [
       "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
   },
 ];
+/* EXERCISE 11
+   Write a function called deleteProp which receives an object and a string as parameters,
+   and returns the given object after deleting its property named as the given string.
+*/
 
+/* function deleteProp (obj, str1) {
+    this.obj = obj
+    this.str1 = str1
+    this.getDetails = function () {
+      return this.obj + " removed by " + this.str1
+    }
+  }
+let newProp = new deleteProp("Prop", "Company");
 
+console.log('\n', newProp.getDetails());  */
+
+const user = {
+  name: "Diogo",
+  surname: "Teixeira"
+}
+
+const deleteProp = function (obj /* object */, prop /*string*/) {
+delete obj[prop];
+return obj;
+};
+
+let newuser = deleteProp(user, "name")
+
+console.log(newuser)
+
+/* EXERCISE 12
+    Write a function called oldestMovie which finds the oldest movie in the provided movies array.
+*/
+/* 
 let oldestMovie = movies.sort(function(a, b) {
   return Date.parse(a) - Date.parse(b)
 })
 console.log(oldestMovie[0]);
-
+ */
 // I'm not pleased with this answer
 
 /* const oldestMovie = function() {
@@ -409,6 +556,20 @@ console.log(oldestMovie[0]);
   }
 }
 console.log(oldestMovie()) */
+
+const oldestMovie = function () {
+  let result = { Year: 2100 };
+  for (let i = 0; i < movies.length; i++) {
+    let currentYear = parseInt(movies[i].Year);
+    if (currentYear < result.Year) {
+      result = movies[i];
+    }
+  }
+
+  return result;
+};
+
+console.log(oldestMovie())
 
 /* EXERCISE 13
     Write a function called countMovies which returns the number of movies contained in the provided movies array.
