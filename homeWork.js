@@ -631,13 +631,41 @@ const onlyInThisMillennium = function () {
     Write a function called getMovieById which receives an id as a parameter and returns the movie with the given id from the provided movies array.
 */
 
+const getMovieById = function (id) {
+  let foundMovie //object
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].imdbID === id) {
+      foundMovie = movies[i];
+    }
+  }
+  return foundMovie;
+};
+
 /* EXERCISE 17
     Write a function called sumAllTheYears which returns the sum of all the years in which the movies in the provided movies array have been produced.
 */
 
+const sumAllTheYears = function () {
+  let result = 0;
+  for (let i = 0; i < movies.length; i++) {
+    result += parseInt(movies[i].Year);
+  }
+  return result;
+};
+
 /* EXERCISE 18
     Write a function called searchByTitle which receives a string as a parameter and returns all the movies in the provided movies array which contain that string in the title.
 */
+
+const searchByTitle = function (keyword) {
+  let result = [];
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].Title.indexOf(keyword) !== -1) {
+      result.push(movies[i]);
+    }
+  }
+  return result;
+};
 
 /* EXERCISE 19
     Write a function called searchAndDivide which receives a string as a parameter and returns an object;
@@ -645,9 +673,34 @@ const onlyInThisMillennium = function () {
     and another array unmatch with all the remaining ones.
 */
 
+const searchAndDivide = function (word) {
+  let result = {
+    match: [],
+    unmatch: [],
+  };
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].Title.indexOf(word) !== -1) {
+      result.match.push(movies[i]);
+    } else {
+      result.unmatch.push(movies[i]);
+    }
+  }
+  return result;
+};
+
 /* EXERCISE 20
    Write a function called "removeIndex" which receives a number as a parameter and returns the provided movies array without the element in the given position.
 */
+
+const removeIndex = function (index) {
+  let result = [];
+  for (let i = 0; i < movies.length; i++) {
+    if (index !== i) {
+      result.push(movies[i]);
+    }
+  }
+  return result;
+};
 
 // [EXTRAS] JS Advanced
 
